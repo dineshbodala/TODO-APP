@@ -48,7 +48,7 @@ def logoutuser(request):
 
 @login_required(login_url='login')
 def index(request):
-    tasks= Task.objects.filter(owner=request.user)
+    tasks= Task.objects.all()
     form= TaskForm()
     context={'tasks':tasks, 'form':form}
     if request.method=='POST':
